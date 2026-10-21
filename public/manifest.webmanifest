@@ -1,0 +1,16 @@
+{
+  "name": "Inventário PCGO — Jataí",
+  "short_name": "Inventário PCGO",
+  "description": "Inventário patrimonial da Polícia Civil de Goiás — Delegacia de Jataí",
+  "start_url": "/conferencia",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#102D24",
+  "theme_color": "#102D24",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "/favicon.png", "sizes": "28x38", "type": "image/png" }
+  ]
+}

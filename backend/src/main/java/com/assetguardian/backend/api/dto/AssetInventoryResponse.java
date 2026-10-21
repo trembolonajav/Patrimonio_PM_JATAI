@@ -1,0 +1,75 @@
+package com.assetguardian.backend.api.dto;
+
+import com.assetguardian.backend.domain.AssetOrigin;
+import com.assetguardian.backend.domain.AssetStatus;
+import com.assetguardian.backend.domain.CheckResult;
+import com.assetguardian.backend.domain.StationStatus;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+public record AssetInventoryResponse(
+    Long assetId,
+    String assetCode,
+    String assetType,
+    String assetDescription,
+    String serialNumber,
+    String manufacturer,
+    String model,
+    String processor,
+    String operatingSystem,
+    AssetStatus assetStatus,
+    AssetOrigin assetOrigin,
+    Long stationId,
+    String stationCode,
+    String stationName,
+    StationStatus stationStatus,
+    UUID employeeId,
+    String employeeName,
+    UUID departmentId,
+    String departmentName,
+    LocalDateTime assignedAt,
+    LocalDateTime lastInventoryCheckAt,
+    LocalDateTime assetUpdatedAt,
+    LocalDate acquisitionDate,
+    String fiscalNote,
+    String accountingCategory,
+    String accountingGroup,
+    String accountingTreatment,
+    BigDecimal acquisitionValue,
+    BigDecimal depreciationRate,
+    Integer usefulLifeYears,
+    Integer usefulLifeMonths,
+    BigDecimal residualValue,
+    LocalDate depreciationStartDate,
+    String depreciationMethod,
+    Integer policyVersion,
+    LocalDate warrantyUntil,
+    String notes,
+    LocalDateTime lastCheckAt,
+    String lastCheckBy,
+    CheckResult lastCheckResult,
+    LocalDateTime voidedAt,
+    String voidedBy,
+    String voidReason,
+    String nfeAccessKey,
+    String fiscalNoteSeries,
+    String supplierName,
+    String acquisitionBatch,
+    String nfItemCode,
+    String supplierOrder,
+    String initialCondition,
+    String conditionGrade,
+    String functionalStatus,
+    String conditionNotes,
+    String partNumber,
+    String regulatoryModel,
+    String ncm,
+    String ean,
+    String upc,
+    String color,
+    String ram,
+    String storage
+) {
+}

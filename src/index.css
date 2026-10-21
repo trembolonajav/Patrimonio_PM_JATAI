@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Polícia Civil de Goiás — identidade do Inventário Patrimonial de Jataí.
+ * Paleta: verde institucional #102D24 · ouro #D6C17A · bronze #A47B16 · papel #F4F5F2.
+ * Tipografia: Cormorant Garamond (títulos) · Instrument Sans (corpo) · IBM Plex Mono (rótulos/números).
+ * Tokens em HSL para casar com o restante do shadcn (hsl(var(--token))).
+ */
+
+@layer base {
+  :root {
+    --background: 100 10% 95%;       /* papel #F4F5F2 */
+    --canvas: 100 7% 90%;
+    --foreground: 153 18% 14%;       /* grafite esverdeado */
+
+    --card: 0 0% 100%;               /* branco */
+    --card-foreground: 153 18% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 153 18% 14%;
+
+    --primary: 161 48% 12%;          /* verde profundo #102D24 */
+    --primary-foreground: 48 35% 96%;
+
+    --secondary: 84 13% 93%;
+    --secondary-foreground: 161 48% 12%;
+
+    --muted: 96 9% 92%;
+    --muted-foreground: 155 8% 43%;
+
+    --accent: 46 52% 66%;            /* ouro claro #D6C17A */
+    --accent-foreground: 161 48% 12%;
+
+    --destructive: 4 61% 44%;        /* vermelho #B4342B */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 96 10% 86%;
+    --input: 96 9% 83%;
+    --ring: 43 76% 36%;
+
+    --radius: 0.625rem;
+
+    /* Brand / status */
+    --navy: 161 48% 12%;
+    --navy-light: 156 36% 24%;
+    --champagne: 46 52% 66%;
+    --brass: 43 76% 36%;
+    --brass-ink: 44 61% 31%;
+    --paper: 100 10% 95%;
+    --paper-2: 100 18% 98%;
+    --ink: 153 18% 14%;
+    --ink-2: 151 12% 27%;
+    --info: 193 86% 30%;
+    --success: 150 70% 30%;
+    --success-foreground: 0 0% 100%;
+    --warning: 43 76% 36%;
+    --danger: 4 61% 44%;             /* #B4342B */
+
+    /* legado usado no mapa/inventário */
+    --bronze: 43 76% 36%;
+    --bronze-light: 46 52% 66%;
+    --cream: 100 10% 95%;
+
+    /* Sidebar navy (shell unificado) */
+    --sidebar-background: 161 48% 12%;
+    --sidebar-foreground: 48 35% 96%;
+    --sidebar-primary: 46 52% 66%;
+    --sidebar-primary-foreground: 161 48% 12%;
+    --sidebar-accent: 156 36% 20%;
+    --sidebar-accent-foreground: 48 35% 96%;
+    --sidebar-border: 45 24% 40%;
+    --sidebar-ring: 46 52% 66%;
+
+    /* Canvas do mapa patrimonial */
+    --canvas-bg: 100 10% 95%;
+    --canvas-grid: 100 7% 85%;
+    --element-wall: 161 42% 20%;
+    --element-partition: 220 10% 65%;
+    --element-desk-fill: 0 0% 100%;
+    --element-desk-stroke: 40 12% 78%;
+    --element-chair-fill: 40 14% 92%;
+    --element-chair-stroke: 40 10% 72%;
+    --element-selected: 43 76% 36%;
+    --element-hover: 46 52% 66%;
+  }
+
+  .dark {
+    --background: 214 40% 8%;
+    --foreground: 40 20% 96%;
+    --card: 214 42% 11%;
+    --card-foreground: 40 20% 96%;
+    --popover: 214 42% 11%;
+    --popover-foreground: 40 20% 96%;
+    --primary: 38 35% 76%;
+    --primary-foreground: 161 48% 12%;
+    --secondary: 214 32% 18%;
+    --secondary-foreground: 40 20% 96%;
+    --muted: 214 32% 18%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 214 32% 18%;
+    --accent-foreground: 40 20% 96%;
+    --destructive: 4 61% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 30% 20%;
+    --input: 214 30% 20%;
+    --ring: 38 35% 76%;
+    --sidebar-background: 161 48% 9%;
+    --sidebar-foreground: 40 20% 96%;
+    --sidebar-primary: 38 35% 76%;
+    --sidebar-primary-foreground: 161 48% 12%;
+    --sidebar-accent: 214 40% 16%;
+    --sidebar-accent-foreground: 40 20% 96%;
+    --sidebar-border: 214 30% 24%;
+    --sidebar-ring: 38 35% 76%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Títulos com serifada, como na proposta de design */
+  h1, h2, h3, .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.005em;
+  }
+}
+
+@layer components {
+  /* Rótulo mono em caixa alta (ex.: "MÓDULO", "ATENDIMENTO") */
+  .label-mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--brass-ink));
+  }
+
+  /* Números tabulares (KPIs, códigos) */
+  .num-mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
